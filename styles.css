@@ -1,0 +1,197 @@
+body {
+  display: block;
+  width: 60%;
+  margin: 0 auto;
+  margin-top: 50px;
+  flex-grow: 1.25;
+  background: linear-gradient(
+    to bottom,
+    rgb(43, 50, 178) 0%,
+    rgb(20, 136, 204) 100%
+  );
+  background-repeat: no-repeat;
+  padding: 5px;
+  border-radius: 10px;
+  font-family: "Merriweather", serif;
+  color: white;
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
+form {
+  padding: 10px 10px;
+  display: inline;
+  max-width: 100%;
+}
+
+.row.g-6 {
+  width: 100%;
+  margin: 0 auto;
+}
+
+.col-6 {
+  width: 60%;
+}
+
+.col-3 {
+  max-width: fit-content;
+  margin: 0 10px;
+}
+
+.searchButton {
+  padding: 7px 20px;
+  border: 1px;
+  border-color: transparent;
+  border-radius: 5px;
+  background-color: white;
+  color: rgba(0, 0, 0, 0.486);
+}
+
+.currentButton {
+  padding: 7px 20px;
+  border-width: 1px;
+  border-color: white;
+  border-radius: 5px;
+  background-color: rgba(0, 0, 0, 0.15);
+  color: white;
+}
+
+section {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+article {
+  display: flex;
+  flex: 1;
+  justify-content: space-around;
+  align-items: stretch;
+  flex-wrap: wrap;
+}
+
+.date-and-location {
+  width: 100%;
+  padding: 5px 15px;
+}
+
+.date-and-location_date {
+  padding: 0px 5px;
+}
+
+.icon {
+  font-size: 125px;
+  color: white;
+  flex-grow: 1.25;
+  text-align: center;
+}
+
+.current-temperature {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  margin-top: 0.25em;
+  width: 100%;
+  font-size: 30px;
+  margin-top: 0.25em;
+  width: 100%;
+  border-right: 1px solid white;
+  flex-grow: 1;
+  text-align: center;
+}
+
+.current-temperature_box {
+  padding: 10px 20px 10px 10px;
+}
+
+.current-temperature__value {
+  display: block;
+  font-size: 70px;
+  font-weight: 300;
+  flex: 1;
+}
+
+.current-temperature__summary {
+  display: block;
+  font-size: 20px;
+  text-transform: capitalize;
+}
+
+.current-stats {
+  display: flex;
+  justify-content: space-around;
+  padding: 15px;
+  width: 100%;
+}
+
+.current-stats__value {
+  font-size: 25px;
+  padding: 5px;
+}
+
+.current-stats__highest-temp {
+  font-size: 25px;
+  padding: 5px;
+}
+
+.current-stats__lowest-temp {
+  font-size: 25px;
+  padding: 5px;
+}
+
+.current-stats__wind {
+  font-size: 25px;
+  padding: 5px;
+}
+
+.current-stats__humidity {
+  font-size: 25px;
+  padding: 5px;
+}
+
+.current-stats__sunrise {
+  font-size: 25px;
+  padding: 5px;
+}
+
+.current-stats__sunset {
+  font-size: 25px;
+  padding: 5px;
+}
+
+.current-stats__label {
+  color: #8bc6ec;
+  align-items: center;
+}
+
+h2 {
+  padding: 15px;
+  margin: 0 auto;
+  font-size: 20px;
+}
+
+.row {
+  margin-bottom: 60px;
+}
+
+.col {
+  background-color: rgba(0, 0, 0, 0.15);
+  border-radius: 5px;
+  padding: 10px 0 0 0;
+  display: block;
+  text-align: center;
+  margin: 5px 20px;
+}
+
+.day {
+  padding: 10px;
+}
+
+.temp {
+  padding: 10px;
+}
+
+.sign {
+  font-size: 10px;
+  display: block;
+  margin-bottom: 20px;
+}
