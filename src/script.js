@@ -29,7 +29,7 @@ currentDate.innerHTML = date();
 function showTemperature(response) {
   console.log(response);
   document.querySelector(".date-and-location_location").innerHTML =
-    response.data.name;
+    response.data.name + "," + " " + response.data.sys.country;
 
   let temperature = Math.round(response.data.main.temp);
   let temperatureElement = document.querySelector(
@@ -38,7 +38,7 @@ function showTemperature(response) {
   temperatureElement.innerHTML = temperature;
 
   let description = document.querySelector(".current-temperature__summary");
-  description.innerHTML = response.data.weather[0].description;
+  description.innerHTML = response.data.weather[0].main;
 
   let highestTemp = Math.round(response.data.main.temp_max);
   let highestTempElement = document.querySelector(
@@ -57,33 +57,28 @@ function showTemperature(response) {
   let humidity = document.querySelector(".current-stats__humidity");
   humidity.innerHTML = `${response.data.main.humidity}%`;
 
-  let sunrise = document.querySelector(".current-stats__sunrise");
-  let sunriseTime = new Date(response.data.sys.sunrise * 1000);
-  let srHour = sunriseTime.getHours();
-  if (srHour < 10) {
-    srHour = `0${srHour}`;
+  let currentIcon = document.querySelector("#current-icon");
+  let iconDescription = response.data.weather[0].main;
+  if (iconDescription == "Thunderstorm") {
+    currentIcon.setAttribute("src", `images/thunderstorm.png`);
+  } else if (iconDescription == "Drizzle") {
+    currentIcon.setAttribute("src", `images/drizzle.png`);
+  } else if (iconDescription == "Rain") {
+    currentIcon.setAttribute("src", `images/rain.png`);
+  } else if (iconDescription == "Snow") {
+    currentIcon.setAttribute("src", `images/snow.png`);
+  } else if (
+    iconDescription == "Mist" ||
+    iconDescription == "Fog" ||
+    iconDescription == "Smoke" ||
+    iconDescription == "Haze"
+  ) {
+    currentIcon.setAttribute("src", `images/mist.png`);
+  } else if (iconDescription == "Clear") {
+    currentIcon.setAttribute("src", `images/clear.png`);
+  } else if (iconDescription == "Clouds") {
+    currentIcon.setAttribute("src", `images/cloudy.png`);
   }
-  let srMinute = sunriseTime.getMinutes();
-  if (srMinute < 10) {
-    srMinute = `0${srMinute}`;
-  }
-
-  let srt = `${srHour}:${srMinute}`;
-  sunrise.innerHTML = srt;
-
-  let sunset = document.querySelector(".current-stats__sunset");
-  let sunsetTime = new Date(response.data.sys.sunset * 1000);
-  let ssHour = sunsetTime.getHours();
-  if (ssHour < 10) {
-    ssHour = `0${ssHour}`;
-  }
-  let ssMinute = sunsetTime.getMinutes();
-  if (ssMinute < 10) {
-    ssMinute = `0${ssMinute}`;
-  }
-
-  let sst = `${ssHour}:${ssMinute}`;
-  sunset.innerHTML = sst;
 }
 
 function searchCity(city) {

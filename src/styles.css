@@ -12,12 +12,11 @@ body {
   margin-top: 50px;
   margin-bottom: 50px;
   flex-grow: 1.25;
-  background: rgb(43, 50, 178) 0%;
   padding: 20px;
   border-radius: 10px;
   font-family: "Merriweather", serif;
   color: white;
-  background-color: rgba(255, 255, 255, 0.5);
+  background-color: rgb(43, 50, 178) 30%;
 }
 
 form {
@@ -26,9 +25,14 @@ form {
   max-width: 100%;
 }
 
-.row.g-6 {
+.form-control {
+  box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+}
+
+.row.g-12 {
   width: 100%;
   margin: 0 auto;
+  margin-bottom: 15px;
 }
 
 .col-6 {
@@ -47,6 +51,7 @@ form {
   border-radius: 5px;
   background-color: white;
   color: rgba(0, 0, 0, 0.486);
+  box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
 }
 
 .currentButton {
@@ -56,6 +61,7 @@ form {
   border-radius: 5px;
   background-color: rgba(0, 0, 0, 0.15);
   color: white;
+  box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
 }
 
 section {
@@ -82,10 +88,15 @@ article {
 }
 
 .icon {
-  font-size: 125px;
   color: white;
   flex-grow: 1.25;
-  text-align: center;
+  margin-top: 5px;
+}
+
+.current-icon {
+  display: block;
+  width: 10px;
+  margin-top: 30px;
 }
 
 .current-temperature {
@@ -107,7 +118,7 @@ article {
 }
 
 .current-temperature__value {
-  display: block;
+  display: inline;
   font-size: 70px;
   font-weight: 300;
   flex: 1;
@@ -187,6 +198,9 @@ h2 {
   display: block;
   text-align: center;
   margin: 5px 20px;
+  box-shadow: rgba(255, 255, 255, 0.1) 0px 1px 1px 0px inset,
+    rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
+    rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
 }
 
 .day {
