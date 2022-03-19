@@ -35,7 +35,7 @@ function showTemperature(response) {
   let temperatureElement = document.querySelector(
     ".current-temperature__value"
   );
-  temperatureElement.innerHTML = `${temperature}&degC`;
+  temperatureElement.innerHTML = temperature;
 
   let description = document.querySelector(".current-temperature__summary");
   description.innerHTML = response.data.weather[0].description;
