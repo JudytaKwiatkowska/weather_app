@@ -6,12 +6,16 @@ body {
   );
 }
 
+.app {
+  max-width: 800px;
+  display: block;
+}
+
 .container {
   display: block;
-  width: 60%;
-  margin-top: 50px;
-  margin-bottom: 50px;
-  flex-grow: 1.25;
+  width: 100%;
+  max-width: 800px;
+  margin: 60px auto;
   padding: 20px;
   border-radius: 10px;
   font-family: "Merriweather", serif;
@@ -92,8 +96,7 @@ article {
 
 .icon {
   color: white;
-  flex-grow: 1.25;
-  padding-top: 15px;
+  flex-grow: 0.5;
 }
 
 .current-icon {
@@ -105,19 +108,14 @@ article {
 .current-temperature {
   display: flex;
   flex-wrap: wrap;
-  justify-content: flex-end;
-  margin-top: 0.25em;
+  justify-content: center;
+  margin-top: 20px;
   width: 100%;
   font-size: 30px;
-  margin-top: 0.25em;
   width: 100%;
   border-right: 1px solid white;
   flex-grow: 1;
   text-align: center;
-}
-
-.current-temperature_box {
-  padding: 10px 20px 10px 10px;
 }
 
 .current-temperature__value {
@@ -142,6 +140,7 @@ article {
   justify-content: space-around;
   padding: 15px;
   width: 100%;
+  margin-top: 10px;
 }
 
 .current-stats__value {
@@ -192,15 +191,16 @@ h2 {
 
 .row {
   margin-bottom: 60px;
+  justify-content: center;
+  flex-wrap: wrap;
 }
 
-.col {
+.col-2 {
   background-color: rgba(0, 0, 0, 0.15);
   border-radius: 5px;
-  padding: 10px 0 0 0;
-  display: block;
+  padding: 0 auto;
   text-align: center;
-  margin: 5px 20px;
+  margin: 5px 10px;
   box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
 }
 

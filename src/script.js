@@ -26,6 +26,31 @@ function date() {
 let currentDate = document.querySelector(".date-and-location_date");
 currentDate.innerHTML = date();
 
+function displayForecast() {
+  let forecastElement = document.querySelector("#forecast");
+
+  let forecastHtml = `<div class="row">`;
+
+  let days = ["Sat", "Sun", "Mon", "Tue", "Wed"];
+
+  days.forEach(function (day) {
+    forecastHtml =
+      forecastHtml +
+      `
+     <div class="col-2">
+          <div class="day">Mon</div>
+          <img src="images/cloudy.png" alt="" width="65" />
+          <div class="temp">
+            <span class="forecast-temp-max"> 18&deg |</span>
+            <span class="forecast-temp-min"> 8&deg</span>
+          </div>
+    </div>
+`;
+  });
+  forecastHtml = forecastHtml + `</div>`;
+  forecastElement.innerHTML = forecastHtml;
+}
+
 function showTemperature(response) {
   console.log(response);
   document.querySelector(".date-and-location_location").innerHTML =
@@ -113,3 +138,4 @@ let currentLocationButton = document.querySelector(".currentButton");
 currentLocationButton.addEventListener("click", currentLocationTemp);
 
 searchCity("Warsaw");
+displayForecast();
