@@ -183,10 +183,8 @@ article {
   align-items: center;
 }
 
-h2 {
-  padding: 15px;
-  margin: 0 auto;
-  font-size: 20px;
+.weather-forecast {
+  margin: 45px 0;
 }
 
 .row {
