@@ -49,7 +49,7 @@ function displayForecast(response) {
           <div class="day">${formatDay(forecastDay.dt)}</div>
           <img src="http://openweathermap.org/img/wn/${
             forecastDay.weather[0].icon
-          }@2x.png" alt="" width="65" />
+          }@2x.png" alt="" width="60" />
           <div class="temp">
             <span class="forecast-temp-max"> ${Math.round(
               forecastDay.temp.max
@@ -86,7 +86,7 @@ function showTemperature(response) {
   temperatureElement.innerHTML = temperature;
 
   let description = document.querySelector(".current-temperature__summary");
-  description.innerHTML = response.data.weather[0].main;
+  description.innerHTML = response.data.weather[0].description;
 
   let highestTemp = Math.round(response.data.main.temp_max);
   let highestTempElement = document.querySelector(
@@ -106,27 +106,11 @@ function showTemperature(response) {
   humidity.innerHTML = `${response.data.main.humidity}%`;
 
   let currentIcon = document.querySelector("#current-icon");
-  let iconDescription = response.data.weather[0].main;
-  if (iconDescription == "Thunderstorm") {
-    currentIcon.setAttribute("src", `images/thunderstorm.png`);
-  } else if (iconDescription == "Drizzle") {
-    currentIcon.setAttribute("src", `images/drizzle.png`);
-  } else if (iconDescription == "Rain") {
-    currentIcon.setAttribute("src", `images/rain.png`);
-  } else if (iconDescription == "Snow") {
-    currentIcon.setAttribute("src", `images/snow.png`);
-  } else if (
-    iconDescription == "Mist" ||
-    iconDescription == "Fog" ||
-    iconDescription == "Smoke" ||
-    iconDescription == "Haze"
-  ) {
-    currentIcon.setAttribute("src", `images/mist.png`);
-  } else if (iconDescription == "Clear") {
-    currentIcon.setAttribute("src", `images/clear.png`);
-  } else if (iconDescription == "Clouds") {
-    currentIcon.setAttribute("src", `images/cloudy.png`);
-  }
+  currentIcon.setAttribute(
+    "src",
+    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+  );
+  currentIcon.setAttribute("alt", response.data.weather[0].description);
 
   getForecast(response.data.coord);
 }

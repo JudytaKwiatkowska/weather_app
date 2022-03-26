@@ -205,6 +205,10 @@ article {
   padding: 10px;
 }
 
+.forecast-temp-min {
+  color: #8bc6ec;
+}
+
 .temp {
   padding: 10px;
 }
