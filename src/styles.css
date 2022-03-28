@@ -214,7 +214,8 @@ article {
 }
 
 .sign {
-  font-size: 10px;
+  font-size: 12px;
+  text-align: center;
   display: block;
   margin-bottom: 20px;
 }
